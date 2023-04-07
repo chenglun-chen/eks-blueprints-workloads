@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iwork-deployment
+  namespace: team-demo1
+spec:
+  selector:
+    matchLabels:
+      app: demoapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: demoapp
+    spec:
+      containers:
+        - name: demoapp
+          image: registry.gitlab.com/iworkspace1/prjdemo/my-spring-boot-app:v0.1
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: '64Mi'
+              cpu: '250m'
+            limits:
+              memory: '512Mi'
+              cpu: '500m'
+      imagePullSecrets: 
+        - name: gitlab-auth
