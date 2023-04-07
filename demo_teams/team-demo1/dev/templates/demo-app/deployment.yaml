@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: demoapp
-          image: registry.gitlab.com/iworkspace1/prjdemo/my-spring-boot-app:9f0a9aee50c2f1088797f64f4481f838498a434d
+          image: registry.gitlab.com/iworkspace1/prjdemo/my-spring-boot-app:c6f064af8b5ee6a2d8286aefb8f4b4c67cffefeb
           ports:
             - containerPort: 8080
           resources:
