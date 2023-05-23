@@ -15,11 +15,11 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: #skiapp.{{ .Values.spec.ingress.host }}
+    - host: myui.givatech.com #skiapp.{{ .Values.spec.ingress.host }}
       http:
         paths:
           - path: /*
-            pathType: ImplementationSpecific
+            pathType: Prefix
             backend:
               serviceName: ssl-redirect
               servicePort: use-annotation
