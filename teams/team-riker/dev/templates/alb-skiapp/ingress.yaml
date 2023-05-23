@@ -18,6 +18,10 @@ spec:
     - host: #skiapp.{{ .Values.spec.ingress.host }}
       http:
         paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
           - path: /
             pathType: Prefix
             backend:
